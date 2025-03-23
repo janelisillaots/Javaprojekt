@@ -26,7 +26,11 @@ public class Konto {
     }
 
     public void ostaPilet() {
-        System.out.println("Uus lotopilet on edukalt ostetud.");
-        this.jääk -= piletihind;
+        if (this.jääk >= piletihind) {
+            System.out.println("Uus lotopilet on edukalt ostetud.");
+            this.jääk -= piletihind;
+        } else {
+            System.out.println("Kontol pole piisavalt vahendeid, laadi raha ning proovi uuesti.");
+        }
     }
 }
