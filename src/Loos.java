@@ -14,7 +14,7 @@ public class Loos {
     }
 
 
-    public void loosimine() {
+    public void loosimine(Konto konto, Analyys analyys) {
         Random rand = new Random();
         int n1 = rand.nextInt(10);
         int n2 = rand.nextInt(10);
@@ -23,7 +23,8 @@ public class Loos {
 
         if (k1==n1 && k2==n2 && k3==n3) {
             System.out.println("Peavõit! Arvasid kõik numbrid õiges järjekorras ära!");
-            System.out.println("Võitsid" + "eurot."); //võidusumma, lisada võitudesse
+            System.out.println("Võitsid 30 eurot."); //võidusumma, lisada võitudesse ja kontole
+            konto.rahaSisse(30);
 
         } else if (
                 (k1==n1 && k2==n3 && k3==n2) ||
@@ -32,7 +33,8 @@ public class Loos {
                 (k1==n3 && k2==n1 && k3==n2) ||
                 (k1==n2 && k2==n3 && k3==n1)) {
             System.out.println("Võit! Arvasin kõik numbrid ära!");
-            System.out.println("Võitsid" + "eurot."); //võidusumma, lisada võitudesse
+            System.out.println("Võitsid 15 eurot."); //võidusumma, lisada võitudesse
+            konto.rahaSisse(15);
 
         } else if (
                 (k1==n1 && k2==n2) ||
@@ -57,12 +59,14 @@ public class Loos {
                 (k2==n3 && k3==n2)) {
 
             System.out.println("Võit! Arvasid kaks numbrit ära!");
-            System.out.println("Võitsid" + "eurot."); //võidusumma, lisada võitudesse
+            System.out.println("Võitsid 5 eurot."); //võidusumma, lisada võitudesse
+            konto.rahaSisse(5);
 
         } else if (k1==n1 || k1==n2 || k1==n3 || k2==n1 || k2==n2 || k2==n3 || k3==n1 || k3==n2 || k3==n3) {
 
-            System.out.println("Võit! Arvasin ühe numbri ära!");
-            System.out.println("Võitsid" + "eurot."); //võidusumma, lisada võitudesse
+            System.out.println("Võit! Arvasid ühe numbri ära!");
+            System.out.println("Võitsid 2 eurot."); //võidusumma, lisada võitudesse
+            konto.rahaSisse(2);
 
         } else {
             System.out.println("Kahjuks seekord ei võitnud!");
