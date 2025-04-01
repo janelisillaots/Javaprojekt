@@ -29,12 +29,14 @@ public class Konto {
         return piletihind;
     }
 
-    public void ostaPilet() {
+    public boolean ostaPilet() {
         if (this.jääk >= piletihind) {
             System.out.println("Uus lotopilet on edukalt ostetud.");
             this.jääk -= piletihind;
+            return true;
         } else {
             System.out.println("Kontol pole piisavalt vahendeid, laadi raha ning proovi uuesti.");
+            return false;
         }
     }
 }
