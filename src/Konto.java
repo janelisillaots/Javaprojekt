@@ -25,6 +25,10 @@ public class Konto {
         return jääk;
     }
 
+    public int getPiletihind() {
+        return piletihind;
+    }
+
     public void ostaPilet() {
         if (this.jääk >= piletihind) {
             System.out.println("Uus lotopilet on edukalt ostetud.");
