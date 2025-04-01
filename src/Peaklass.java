@@ -64,11 +64,12 @@ public class Peaklass {
     public static void mänguReeglid() {
         System.out.println("Kiirloterii mäng Vali 3!");
         System.out.println("Pane oma õnn proovile ja arva ära salajane kood. Mängimine on ülilihtne! Osta pilet (2 eurot) ja vali kolm arvu.");
+        System.out.println("");
         System.out.println("AUHINNAD");
         System.out.println("30€ - PEAVÕIT arvad koodi õigesti ära");
         System.out.println("15€ - arvad ära kõik 3 numbrit, kuid järjekord pole päris õige");
         System.out.println("5€ - arvad ära 2 numbrit");
         System.out.println("2€ - arvad ära 1 numbri");
-        System.out.println("Laadi enda mängijakontole raha ja valmistu suurelt võitma!");
+        System.out.println("");
     }
 }
