@@ -1,41 +1,35 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Konto {
-    private int jääk;
-    private int piletihind;
+import static java.util.Collections.max;
 
-    public Konto() {
-        this.jääk = 0;
-        this.piletihind = 2;
+public class Analyys {
+    private List<Integer> võidetudSummad;
+
+    public Analyys() {
+        this.võidetudSummad = new ArrayList<>();
     }
 
-    public void rahaSisse() { // kui kasutaja soovib kontole raha sisestada
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Sisesta summa, mille soovid kontole lisada.");
-        int rahasumma = sc.nextInt();
-        this.jääk += rahasumma;
-        System.out.println("Sinu kontole lisati " + rahasumma + " eurot.");
+    public List<Integer> getVõidetudSummad() {
+        return võidetudSummad;
     }
 
-    public void rahaSisse(int summa) { // peale võitu saab raha panna kontole
-        this.jääk += summa;
-    } // lotost saadud võidud lisada kontole
-
-    public int getJääk() {
-        return jääk;
+    public void võiduLisamine(int võit) {
+        võidetudSummad.add(võit);
     }
 
-    public int getPiletihind() { return piletihind; }
-
-    public boolean ostaPilet() { // ostab piletie, tagastab kas pilet sai ostetud või mitte (kas kontol oli piisavalt raha)
-        boolean uusMäng = true;
-        if (this.jääk >= piletihind) {
-            System.out.println("Uus lotopilet on edukalt ostetud.");
-            this.jääk -= piletihind;
-        } else {
-            System.out.println("Kontol pole piisavalt vahendeid, laadi raha ning proovi uuesti.");
-            uusMäng = false;
+    public int väljastaVõidud() { // väljastab võidetud summad eraldi, lisab ka võidetud kogusumma, väljastab ka suurima võidu, tagastab võidetud kogusumma
+        int koguSumma = 0;
+        System.out.print("Lotomänguga võidetud rahasummad: ");
+        for (int võit : this.võidetudSummad) {
+            System.out.print(võit + " eurot; ");
+            koguSumma += võit;
         }
-        return uusMäng;
+        System.out.println();
+        System.out.println("Suurim võitudest: " + max(this.võidetudSummad) + " eurot.");
+        System.out.println("Lotoga võidetud kogusumma: " + koguSumma + " eurot.");
+
+        return koguSumma;
     }
+
 }
