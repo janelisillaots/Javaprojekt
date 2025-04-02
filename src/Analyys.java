@@ -10,10 +10,6 @@ public class Analyys {
         this.võidetudSummad = new ArrayList<>();
     }
 
-    public List<Integer> getVõidetudSummad() {
-        return võidetudSummad;
-    }
-
     public void võiduLisamine(int võit) {
         võidetudSummad.add(võit);
     }
